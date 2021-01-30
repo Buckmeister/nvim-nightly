@@ -46,8 +46,4 @@ In order to perform an update of neovim's nightly distribution, use the
 nvn -u
 ```
 
-At this time, the script assumes that it is executed under MacOS. However, the
-adjustments needed are a matter of simply changing the vars in the first lines
-of the script accordingly to environment.
-
 Have fun!
