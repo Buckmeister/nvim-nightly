@@ -29,6 +29,7 @@ Optionally, you can alias the script by adding this to your shell
 configuration
 
 ```
+export NVIM_NIGHTLY_DIR="$HOME/.local/share/nvim/nightly"
 alias nvn="$NVIM_NIGHTLY_DIR/nvim-nightly.sh"
 ```
 
