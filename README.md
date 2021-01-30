@@ -1,4 +1,4 @@
-# nvim-nightly
+# Neovim Nightly with bundled Configuration
 
 For my daily work I use the stable release of neovim (Version 0.4.4 as the time of writing)
 in conjunction with CoC and a large monolithic, grown over time configuration
@@ -14,6 +14,8 @@ and restructuring would interfere with my working setup.
 So I came up with a simple wrapper script which can be used to install and
 update neovim nightly and use the bundled configuration located in the same
 path the script is in.
+
+![screenshot](https://github.com/Buckmeister/nvim-nightly/raw/master/docs/Screenshot.png "Screenshot of neovim with defx opened in centered, border decorated floating window")
 
 Here are the necessary steps for installing and using it
 
