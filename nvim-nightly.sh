@@ -40,7 +40,7 @@ if [ "$1" == "-u" ]; then
   update_nvim
 fi
 
-if [ "${NIGHTLY_DIR}/nvim-osx64/bin/nvim" ]; then
+if [ ! -f "${NIGHTLY_DIR}/nvim-osx64/bin/nvim" ]; then
   update_nvim
 fi
 
