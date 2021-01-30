@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 DEFAULT_NVIM_NIGHTLY_DIR=${HOME}/.local/share/nvim/nightly
+[ -z "$NVIM_NIGHTLY_DIR" ] && export NVIM_NIGHTLY_DIR=$DEFAULT_NVIM_NIGHTLY_DIR
 
 OPERATING_SYSTEM=$(uname)
 if [ "$OPERATING_SYSTEM" == "Darwin" ]; then
@@ -16,8 +17,6 @@ else
 fi
 
 NVIM_URL=https://github.com/neovim/neovim/releases/download/nightly/${NVIM_BIN_FILE}
-
-[ -z "$NVIM_NIGHTLY_DIR" ] && export NVIM_NIGHTLY_DIR=$DEFAULT_NVIM_NIGHTLY_DIR
 
 function print_usage() {
   echo
