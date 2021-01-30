@@ -54,4 +54,4 @@ if [ ! -f "${NIGHTLY_DIR}/local/share/nvim/site/autoload/plug.vim" ]; then
   start_nvim
 fi
 
-start_nvim
+start_nvim $*
