@@ -22,20 +22,20 @@ export NVIM_NIGHTLY_DIR="$HOME/.config/nvim/nightly"
 mkdir -p "$NVIM_NIGHTLY_DIR"
 cd "$NVIM_NIGHTLY_DIR"
 git clone https://github.com/Buckmeister/nvim-nightly.git .
-./nvim_nightly.sh
+./nvim-nightly.sh
 ```
 
 Optionally, you can alias the script by adding this to your shell
 configuration
 
 ```
-alias nvn="$NVIM_NIGHTLY_DIR/nvim_nightly.sh"
+alias nvn="$NVIM_NIGHTLY_DIR/nvim-nightly.sh"
 ```
 
 Or symlink it to some directory included in your $PATH. For example:
 
 ```
-ln -s "$NVIM_NIGHTLY_DIR/nvim_nightly.sh" "$HOME/.local/bin/nvn"
+ln -s "$NVIM_NIGHTLY_DIR/nvim-nightly.sh" "$HOME/.local/bin/nvn"
 ```
 
 In order to perform an update of neovim's nightly distribution, use the
