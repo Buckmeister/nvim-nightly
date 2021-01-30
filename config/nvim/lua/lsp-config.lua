@@ -1,0 +1,10 @@
+require'lspconfig'.angularls.setup{}
+require'lspconfig'.bashls.setup{}
+require'lspconfig'.dockerls.setup{}
+require'lspconfig'.hls.setup{}
+require'lspconfig'.perlls.setup{}
+require'lspconfig'.r_language_server.setup{}
+require'lspconfig'.rust_analyzer.setup{}
+require'lspconfig'.tsserver.setup{}
+require'lspconfig'.vimls.setup{}
+require'lspconfig'.yamlls.setup{}
