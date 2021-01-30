@@ -18,7 +18,7 @@ path the script is in.
 Here are the necessary steps for installing and using it
 
 ```
-export NVIM_NIGHTLY_DIR="$HOME/.config/nvim/nightly"
+export NVIM_NIGHTLY_DIR="$HOME/.local/share/nvim/nightly"
 mkdir -p "$NVIM_NIGHTLY_DIR"
 cd "$NVIM_NIGHTLY_DIR"
 git clone https://github.com/Buckmeister/nvim-nightly.git .
