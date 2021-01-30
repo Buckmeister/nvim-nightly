@@ -1,8 +1,20 @@
 #!/usr/bin/env bash
 
 DEFAULT_NVIM_NIGHTLY_DIR=${HOME}/.local/share/nvim/nightly
-NVIM_BIN_FILE=nvim-macos.tar.gz
-NVIM_BIN_DIR=nvim-osx64
+
+OPERATING_SYSTEM=$(uname)
+if [ "$OPERATING_SYSTEM" == "Darwin" ]; then
+  NVIM_BIN_FILE=nvim-macos.tar.gz
+  NVIM_BIN_DIR=nvim-osx64
+  NVIM_COMMAND=${NVIM_NIGHTLY_DIR}/${NVIM_BIN_DIR}/bin/nvim
+elif [ "$OPERATING_SYSTEM" == "Linux" ]; then
+  NVIM_BIN_FILE=nvim.appimage
+  NVIM_COMMAND=${NVIM_NIGHTLY_DIR}/${NVIM_BIN_FILE}
+else
+  echo "Unsupported operating system"
+  exit 1
+fi
+
 NVIM_URL=https://github.com/neovim/neovim/releases/download/nightly/${NVIM_BIN_FILE}
 
 [ -z "$NVIM_NIGHTLY_DIR" ] && export NVIM_NIGHTLY_DIR=$DEFAULT_NVIM_NIGHTLY_DIR
@@ -19,20 +31,32 @@ function print_usage() {
 function update_nvim() {
   [ -d "${NVIM_NIGHTLY_DIR}/${NVIM_BIN_DIR}" ] && rm -rf "${NVIM_NIGHTLY_DIR}/${NVIM_BIN_DIR}"
   [ -f "${NVIM_NIGHTLY_DIR}/${NVIM_BIN_FILE}" ] && rm "${NVIM_NIGHTLY_DIR}/${NVIM_BIN_FILE}"
+
   echo
   echo "Updating neovim..."
   echo
   curl -fLo "${NVIM_NIGHTLY_DIR}/${NVIM_BIN_FILE}" --create-dirs "${NVIM_URL}"
-  echo
-  echo "Extracting binary distribution..."
-  echo
-  tar xzf "${NVIM_NIGHTLY_DIR}/${NVIM_BIN_FILE}" --directory="${NVIM_NIGHTLY_DIR}"
+
+  if [ "$OPERATING_SYSTEM" == "Darwin" ]; then
+    echo
+    echo "Extracting binary distribution..."
+    echo
+    tar xzf "${NVIM_NIGHTLY_DIR}/${NVIM_BIN_FILE}" --directory="${NVIM_NIGHTLY_DIR}"
+  fi
+
+  if [ "$OPERATING_SYSTEM" == "linux" ]; then
+    echo
+    echo "Adjusting file permissions"
+    echo
+    chmod 755 "${NVIM_NIGHTLY_DIR}/${NVIM_BIN_FILE}"
+  fi
 }
 
 function start_nvim() {
   export XDG_CONFIG_HOME="${NVIM_NIGHTLY_DIR}/config"
   export XDG_DATA_HOME="${NVIM_NIGHTLY_DIR}/local/share"
-  "${NVIM_NIGHTLY_DIR}/${NVIM_BIN_DIR}/bin/nvim" $*
+  "$NVIM_COMMAND" $*
+
 }
 
 if [ "$1" == "--help" ]; then

@@ -1,9 +1,6 @@
-/config/configstore 
-/local/share/nvim/plugged/*
-/local/share/nvim/rplugin.vim
-/local/share/nvim/shada/main.shada
-/local/share/nvim/site/autoload/plug.vim
-/local/share/nvim/swap
+/config/configstore
+/local
+/nvim.appimage
 /nvim-macos.tar.gz
 /nvim-osx64
 
