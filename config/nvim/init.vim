@@ -39,7 +39,7 @@ source $VIMUSERRUNTIME/haskell.vim
 " == coloresque ==
 source $VIMUSERRUNTIME/coloresque.vim
 
-" == vim-choosewichoosewin ==
+" == vim-choosewin ==
 source $VIMUSERRUNTIME/choosewin.vim
 
 " == defx ==
@@ -59,7 +59,4 @@ source $VIMUSERRUNTIME/completion.vim
 
 " == lsp ==
 source $VIMUSERRUNTIME/lsp.vim
-lua require("lsp-config")
-
-" == echo friendly ascii art cat ==
-autocmd VimEnter * echo "(>^.^<)"
+silent! lua require("lsp-config")
