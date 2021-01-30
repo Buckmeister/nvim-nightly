@@ -29,26 +29,25 @@ function print_usage() {
 }
 
 function update_nvim() {
-  [ -d "${NVIM_NIGHTLY_DIR}/${NVIM_BIN_DIR}" ] && rm -rf "${NVIM_NIGHTLY_DIR}/${NVIM_BIN_DIR}"
-  [ -f "${NVIM_NIGHTLY_DIR}/${NVIM_BIN_FILE}" ] && rm "${NVIM_NIGHTLY_DIR}/${NVIM_BIN_FILE}"
-
   echo
   echo "Updating neovim..."
   echo
+  [ -f "${NVIM_NIGHTLY_DIR}/${NVIM_BIN_FILE}" ] && rm "${NVIM_NIGHTLY_DIR}/${NVIM_BIN_FILE}"
   curl -fLo "${NVIM_NIGHTLY_DIR}/${NVIM_BIN_FILE}" --create-dirs "${NVIM_URL}"
 
   if [ "$OPERATING_SYSTEM" == "Darwin" ]; then
     echo
     echo "Extracting binary distribution..."
     echo
+    [ -d "${NVIM_NIGHTLY_DIR}/${NVIM_BIN_DIR}" ] && rm -rf "${NVIM_NIGHTLY_DIR}/${NVIM_BIN_DIR}"
     tar xzf "${NVIM_NIGHTLY_DIR}/${NVIM_BIN_FILE}" --directory="${NVIM_NIGHTLY_DIR}"
   fi
 
-  if [ "$OPERATING_SYSTEM" == "linux" ]; then
+  if [ "$OPERATING_SYSTEM" == "Linux" ]; then
     echo
     echo "Adjusting file permissions"
     echo
-    chmod 755 "${NVIM_NIGHTLY_DIR}/${NVIM_BIN_FILE}"
+    chmod u+x "${NVIM_NIGHTLY_DIR}/${NVIM_BIN_FILE}"
   fi
 }
 
@@ -56,7 +55,6 @@ function start_nvim() {
   export XDG_CONFIG_HOME="${NVIM_NIGHTLY_DIR}/config"
   export XDG_DATA_HOME="${NVIM_NIGHTLY_DIR}/local/share"
   "$NVIM_COMMAND" $*
-
 }
 
 if [ "$1" == "--help" ]; then
@@ -69,7 +67,7 @@ if [ "$1" == "-u" ]; then
   update_nvim
 fi
 
-if [ ! -f "${NVIM_NIGHTLY_DIR}/${NVIM_BIN_DIR}/bin/nvim" ]; then
+if [ ! -x "${NVIM_COMMAND}" ]; then
   update_nvim
 fi
 
