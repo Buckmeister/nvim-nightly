@@ -37,6 +37,9 @@ source $VIMUSERRUNTIME/emmet.vim
 " == haskell-vim ==
 source $VIMUSERRUNTIME/haskell.vim
 
+" == snippets.nvim ==
+lua require('snippets-nvim')
+
 " == coloresque ==
 source $VIMUSERRUNTIME/coloresque.vim
 
