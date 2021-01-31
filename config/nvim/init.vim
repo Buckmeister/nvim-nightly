@@ -1,5 +1,6 @@
 let $VIMUSERRUNTIME = fnamemodify($MYVIMRC, ':p:h')
 
+try
 " == setup ==
 source $VIMUSERRUNTIME/setup.vim
 
@@ -59,4 +60,8 @@ source $VIMUSERRUNTIME/completion.vim
 
 " == lsp ==
 source $VIMUSERRUNTIME/lsp.vim
-silent! lua require("lsp-config")
+lua require("lsp-config")
+
+catch
+  echo 'Caught "' . v:exception . '" in ' . v:throwpoint
+endtry
