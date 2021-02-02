@@ -17,6 +17,8 @@ path the script is in.
 
 ![screenshot](https://github.com/Buckmeister/nvim-nightly/raw/master/docs/Screenshot.png "Screenshot of neovim with defx opened in centered, border decorated floating window")
 
+## Installation
+
 Here are the necessary steps for installing and using it
 
 ```
@@ -41,11 +43,19 @@ Or symlink it to some directory included in your $PATH. For example:
 ln -s "$NVIM_NIGHTLY_DIR/nvim-nightly.sh" "$HOME/.local/bin/nvn"
 ```
 
+## Neovim updates
+
 In order to perform an update of neovim's nightly distribution, use the
 '-u' command line parameter.
 
 ```
 nvn -u
 ```
+
+## Requirements
+
+Please see ![requirements](docs/requirements.md "Recommended steps for
+installation of os side requirement") for all needed installation steps
+regarding os side requirements for plugin and lsp-config dependecies.
 
 Have fun!
