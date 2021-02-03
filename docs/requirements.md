@@ -13,15 +13,18 @@ npm -g install \
   neovim \
   typescript-language-server \
   vim-language-server \
+  vls \
+  vscode-css-languageserver-bin \
+  vscode-html-languageserver-bin \
   vscode-json-languageserver \
   yaml-language-server
-
 ```
 
 ## Python Packages
 
 ```
-pip3 install \
+pip3 install -U \
+  jedi-language-server \
   pynvim
 ```
 
