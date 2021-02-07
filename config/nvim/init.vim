@@ -40,6 +40,9 @@ source $VIMUSERRUNTIME/haskell.vim
 " == snippets.nvim ==
 lua require('snippets-nvim')
 
+" == telescope.nvim ==
+source $VIMUSERRUNTIME/telescope.vim
+
 " == coloresque ==
 source $VIMUSERRUNTIME/coloresque.vim
 
