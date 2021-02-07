@@ -46,6 +46,9 @@ source $VIMUSERRUNTIME/coloresque.vim
 " == vim-choosewin ==
 source $VIMUSERRUNTIME/choosewin.vim
 
+" == UtilSnips ==
+source $VIMUSERRUNTIME/utilsnips.vim
+
 " == defx ==
 source $VIMUSERRUNTIME/defx.vim
 

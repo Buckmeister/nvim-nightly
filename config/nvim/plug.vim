@@ -1,6 +1,7 @@
 call plug#begin(stdpath('data') . '/plugged')
 
 Plug 'gruvbox-community/gruvbox'
+Plug 'honza/vim-snippets'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/vim-easy-align'
@@ -13,6 +14,7 @@ Plug 'nvim-lua/completion-nvim'
 Plug 'ObserverOfTime/coloresque.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'sbdchd/neoformat'
+Plug 'SirVer/ultisnips'
 Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 't9md/vim-choosewin'
 Plug 'tpope/vim-commentary'
