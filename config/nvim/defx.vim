@@ -48,7 +48,10 @@ function! s:defx_my_settings() abort
   nnoremap <silent><buffer><expr> h
   \ defx#is_directory() ?
   \ defx#do_action('open_tree', 'toggle') :
-  \ ''
+  \ defx#do_action('multi', [
+  \     ['search', fnamemodify(defx#get_candidate().action__path, ':h')],
+  \     ['open_tree', 'toggle']
+  \ ])
   nnoremap <silent><buffer><expr> <BS>
   \ defx#do_action('cd', ['..'])
   nnoremap <silent><buffer><expr> ~
