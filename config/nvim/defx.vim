@@ -1,4 +1,3 @@
-autocmd FileType defx call s:defx_my_settings()
 function! s:defx_my_settings() abort
   nnoremap <silent><buffer><expr> <CR>
   \ defx#is_directory() ?
@@ -47,11 +46,16 @@ function! s:defx_my_settings() abort
   \ defx#do_action('repeat')
   nnoremap <silent><buffer><expr> h
   \ defx#is_directory() ?
-  \ defx#do_action('open_tree', 'toggle') :
-  \ defx#do_action('multi', [
+  \   defx#is_opened_tree() ?
+  \     defx#do_action('close_tree') :
+  \     defx#do_action('multi', [
+  \       ['search', fnamemodify(defx#get_candidate().action__path, ':h')],
+  \       ['close_tree']
+  \     ]) :
+  \   defx#do_action('multi', [
   \     ['search', fnamemodify(defx#get_candidate().action__path, ':h')],
-  \     ['open_tree', 'toggle']
-  \ ])
+  \     ['close_tree']
+  \   ])
   nnoremap <silent><buffer><expr> <BS>
   \ defx#do_action('cd', ['..'])
   nnoremap <silent><buffer><expr> ~
@@ -74,50 +78,54 @@ function! s:defx_my_settings() abort
   \ defx#do_action('change_vim_cwd')
 endfunction
 
-function! CreateCenteredDefxWindow()
-    let width = min([&columns - 4, max([80, &columns - 20])])
-    let height = min([&lines - 4, max([20, &lines - 10])])
-    let top = ((&lines - height) / 2) - 1
-    let left = (&columns - width) / 2
-    let opts = {'relative': 'editor', 'row': top, 'col': left, 'width': width, 'height': height, 'style': 'minimal'}
-    let top = "╭" . repeat("─", width - 2) . "╮"
-    let mid = "│" . repeat(" ", width - 2) . "│"
-    let bot = "╰" . repeat("─", width - 2) . "╯"
-    let lines = [top] + repeat([mid], height - 2) + [bot]
-    let s:buf = nvim_create_buf(v:false, v:true)
-    call nvim_buf_set_lines(s:buf, 0, -1, v:true, lines)
-    let s:whnd = nvim_open_win(s:buf, v:true, opts)
+function! CreateCenteredDefxWindow(bg)
+  let width = min([&columns - 4, max([80, &columns - 20])])
+  let height = min([&lines - 4, max([20, &lines - 10])])
+  let top = ((&lines - height) / 2) - 1
+  let left = (&columns - width) / 2
+  let opts = {'relative': 'editor', 'row': top, 'col': left, 'width': width, 'height': height, 'style': 'minimal'}
+  let top = "╭" . repeat("─", width - 2) . "╮"
+  let mid = "│" . repeat(" ", width - 2) . "│"
+  let bot = "╰" . repeat("─", width - 2) . "╯"
+  let lines = [top] + repeat([mid], height - 2) + [bot]
+  let s:buf = nvim_create_buf(v:false, v:true)
+  call nvim_buf_set_lines(s:buf, 0, -1, v:true, lines)
+  let s:whnd = nvim_open_win(s:buf, v:true, opts)
+
+  let opts.row += 1
+  let opts.height -= 2
+  let opts.col += 2
+  let opts.width -= 4
+
+  if a:bg == v:true
     set winhl=Normal:Floating
-    let opts.row += 1
-    let opts.height -= 2
-    let opts.col += 2
-    let opts.width -= 4
+  endif
 
-    call defx#custom#option('_', {
-          \ 'winwidth': opts.width,
-          \ 'winheight': opts.height,
-          \ 'wincol': opts.col,
-          \ 'winrow': opts.row,
-          \ 'split': 'floating',
-          \ 'columns': 'icons:indent:filename:type',
-          \ 'buffer_name': 'defx',
-          \ 'show_ignored_files': 0,
-          \ 'toggle': 0,
-          \ 'resume': 1
-          \ })
+  call defx#custom#option('_', {
+        \ 'winwidth': opts.width,
+        \ 'winheight': opts.height,
+        \ 'wincol': opts.col,
+        \ 'winrow': opts.row,
+        \ 'split': 'floating',
+        \ 'columns': 'icons:indent:filename:type',
+        \ 'buffer_name': 'defx',
+        \ 'show_ignored_files': 0,
+        \ 'toggle': 0,
+        \ 'resume': 1
+        \ })
+  Defx
 
-    Defx
+  setl norelativenumber
+  setl nonumber
+  setl termguicolors
+  hi Cursor blend=100
+  setl guicursor+=a:Cursor/lCursor
 
-    setl norelativenumber
-    setl nonumber
-    setl termguicolors
-    hi Cursor blend=100
-    setl guicursor+=a:Cursor/lCursor
-
-    augroup cls
-      autocmd!
-      au BufHidden <buffer> call nvim_win_close(s:whnd , v:true) | hi Cursor blend=0 
-    augroup END
+  augroup cls
+    autocmd!
+    au BufHidden <buffer> call nvim_win_close(s:whnd , v:true) | hi Cursor blend=0 
+  augroup END
 endfunction
 
-nnoremap <silent><leader>e <cmd>call CreateCenteredDefxWindow()<CR>
+autocmd FileType defx call s:defx_my_settings()
+nnoremap <silent><leader>ef <cmd>call CreateCenteredDefxWindow(v:false)<CR>
