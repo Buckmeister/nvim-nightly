@@ -19,6 +19,9 @@ source $VIMUSERRUNTIME/mappings.vim
 " == plug ==
 source $VIMUSERRUNTIME/plug.vim
 
+" == completion-tabnine ==
+source $VIMUSERRUNTIME/tabnine.vim
+
 " == gruvbox ==
 source $VIMUSERRUNTIME/gruvbox.vim
 
@@ -67,9 +70,11 @@ source $VIMUSERRUNTIME/airline.vim
 " == completion-nvim ==
 source $VIMUSERRUNTIME/completion.vim
 
-" == lsp ==
-source $VIMUSERRUNTIME/lsp.vim
+" == lsp-config ==
 lua require("lsp-config")
+
+" == nvim-lsputils ==
+lua require('nvim-lsputils')
 
 catch
   echo 'Caught "' . v:exception . '" in ' . v:throwpoint

@@ -1,7 +1,9 @@
 call plug#begin(stdpath('data') . '/plugged')
 
+Plug 'aca/completion-tabnine', { 'do': './install.sh' }
 Plug 'gruvbox-community/gruvbox'
 Plug 'honza/vim-snippets'
+Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/vim-easy-align'
@@ -16,6 +18,8 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'ObserverOfTime/coloresque.vim'
+Plug 'RishabhRD/popfix'
+Plug 'RishabhRD/nvim-lsputils'
 Plug 'ryanoasis/vim-devicons'
 Plug 'sbdchd/neoformat'
 Plug 'SirVer/ultisnips'
