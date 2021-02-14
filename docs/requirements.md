@@ -64,3 +64,39 @@ JDTLS_CONFIG=/usr/local/share/jdt.ls/config_mac
   --add-opens java.base/java.util=ALL-UNNAMED \
   --add-opens java.base/java.lang=ALL-UNNAMED
 ```
+
+## OmniSharp Installation
+
+```
+export OMNISHARP_DIR=/usr/local/share/omnisharp
+[ -d "$OMNISHARP_DIR" ] && rm -rf "$OMNISHARP_DIR/*"
+curl -fLo "$OMNISHARP_DIR/omnisharp-osx.tar.gz" --create-dirs "https://github.com/OmniSharp/omnisharp-roslyn/releases/download/v1.37.6/omnisharp-osx.tar.gz"
+tar xzf "$OMNISHARP_DIR/omnisharp-osx.tar.gz" --directory="$OMNISHARP_DIR"
+```
+
+## Haskell-Language-Server Installation
+
+### Prerequesits: ghcup
+
+```
+export GHCUP_DIR=/usr/local/share/ghcup
+[ -d "$GHCPUP_DIR" ] && rm -rf "$GHCPUP_DIR/*"
+curl -fLo "$GHCPUP_DIR/ghcup" --create-dirs "https://downloads.haskell.org/~ghcup/x86_64-apple-darwin-ghcup"
+chmod 755 "$GHCPUP_DIR/ghcup"
+ln -s "$GHCPUP_DIR/ghcup" ~/.local/bin/
+```
+
+### Extending PATH
+
+Put `~/.ghcpup/bin` to your PATH variable by adding the following to your shell
+configuration.
+
+```
+export PATH=$HOME/.ghcup/bin:$PATH
+```
+
+### Installing HLS
+
+```
+ghcpup install hls
+```

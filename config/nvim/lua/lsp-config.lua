@@ -1,12 +1,12 @@
 local on_attach = function(client, bufnr)
-    local function buf_set_keymap(...)
-        vim.api.nvim_buf_set_keymap(bufnr, ...)
-    end
-    local function buf_set_option(...)
-        vim.api.nvim_buf_set_option(bufnr, ...)
-    end
+  local function buf_set_keymap(...)
+    vim.api.nvim_buf_set_keymap(bufnr, ...)
+  end
+  local function buf_set_option(...)
+    vim.api.nvim_buf_set_option(bufnr, ...)
+  end
 
-    buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
+  buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
     -- Mappings.
     local opts = {noremap = true, silent = true}
@@ -73,6 +73,12 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 require'lspconfig'.html.setup {capabilities = capabilities}
+local pid = vim.fn.getpid()
+local omnisharp_bin = "/usr/local/share/omnisharp/run"
+require'lspconfig'.omnisharp.setup {
+    cmd = {omnisharp_bin, "--languageserver", "--hostPID", tostring(pid)},
+    on_attach = on_attach
+}
 require'lspconfig'.jedi_language_server.setup {on_attach = on_attach}
 require'lspconfig'.jsonls.setup {on_attach = on_attach}
 require'lspconfig'.jdtls.setup {
