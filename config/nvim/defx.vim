@@ -74,7 +74,7 @@ function! s:defx_my_settings() abort
   \ defx#do_action('redraw')
   nnoremap <silent><buffer><expr> <C-g>
   \ defx#do_action('print')
-  nnoremap <silent><buffer><expr> cd
+  nnoremap <silent><buffer><expr> C
   \ defx#do_action('change_vim_cwd')
 endfunction
 
@@ -107,7 +107,7 @@ function! CreateCenteredDefxWindow(bg)
         \ 'wincol': opts.col,
         \ 'winrow': opts.row,
         \ 'split': 'floating',
-        \ 'columns': 'icons:indent:filename:type',
+        \ 'columns': 'icons:indent:filename',
         \ 'buffer_name': 'defx',
         \ 'show_ignored_files': 0,
         \ 'toggle': 0,
