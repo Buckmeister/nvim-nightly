@@ -80,15 +80,15 @@ tar xzf "$OMNISHARP_DIR/omnisharp-osx.tar.gz" --directory="$OMNISHARP_DIR"
 
 ```
 export GHCUP_DIR=/usr/local/share/ghcup
-[ -d "$GHCPUP_DIR" ] && rm -rf "$GHCPUP_DIR/*"
-curl -fLo "$GHCPUP_DIR/ghcup" --create-dirs "https://downloads.haskell.org/~ghcup/x86_64-apple-darwin-ghcup"
-chmod 755 "$GHCPUP_DIR/ghcup"
-ln -s "$GHCPUP_DIR/ghcup" ~/.local/bin/
+[ -d "$GHCUP_DIR" ] && rm -rf "$GHCUP_DIR/*"
+curl -fLo "$GHCUP_DIR/ghcup" --create-dirs "https://downloads.haskell.org/~ghcup/x86_64-apple-darwin-ghcup"
+chmod 755 "$GHCUP_DIR/ghcup"
+ln -s "$GHCUP_DIR/ghcup" ~/.local/bin/
 ```
 
 ### Extending PATH
 
-Put `~/.ghcpup/bin` to your PATH variable by adding the following to your shell
+Put `~/.ghcup/bin` to your PATH variable by adding the following to your shell
 configuration.
 
 ```
@@ -98,5 +98,5 @@ export PATH=$HOME/.ghcup/bin:$PATH
 ### Installing HLS
 
 ```
-ghcpup install hls
+ghcup install hls
 ```
