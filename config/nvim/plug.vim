@@ -25,6 +25,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'sbdchd/neoformat'
 Plug 'SirVer/ultisnips'
 Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'tamago324/compe-zsh'
 Plug 't9md/vim-choosewin'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
