@@ -36,10 +36,14 @@ Plug 'uiiaoo/java-syntax.vim'
 Plug 'vim-airline/vim-airline'
 
 Plug 'microsoft/vscode'
+Plug g:plugs['vscode'].dir.'extensions/java'
 Plug g:plugs['vscode'].dir.'extensions/javascript'
 Plug g:plugs['vscode'].dir.'extensions/typescript-basics'
 Plug g:plugs['vscode'].dir.'extensions/cpp'
+Plug g:plugs['vscode'].dir.'extensions/csharp'
 Plug g:plugs['vscode'].dir.'extensions/markdown-basics'
 Plug g:plugs['vscode'].dir.'extensions/swift'
+Plug g:plugs['vscode'].dir.'extensions/bat'
+Plug g:plugs['vscode'].dir.'extensions/powershell'
 
 call plug#end()
