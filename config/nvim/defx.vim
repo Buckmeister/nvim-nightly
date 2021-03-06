@@ -23,7 +23,7 @@ function! s:defx_my_settings() abort
   \ defx#do_action('new_directory')
   nnoremap <silent><buffer><expr> a
   \ defx#do_action('new_file')
- nnoremap <silent><buffer><expr> m
+  nnoremap <silent><buffer><expr> m
   \ defx#do_action('new_multiple_files')
   nnoremap <silent><buffer><expr> c
   \ defx#do_action('toggle_columns',
@@ -33,7 +33,8 @@ function! s:defx_my_settings() abort
   nnoremap <silent><buffer><expr> d
   \ defx#do_action('remove')
   nnoremap <silent><buffer><expr> r
-  \ defx#do_action('rename')
+  \ ':hi Cursor blend=0<CR>' .
+  \ defx#do_action("rename")
   nnoremap <silent><buffer><expr> !
   \ defx#do_action('execute_command')
   nnoremap <silent><buffer><expr> s
@@ -123,9 +124,11 @@ function! CreateCenteredDefxWindow(bg)
 
   augroup cls
     autocmd!
-    au BufHidden <buffer> call nvim_win_close(s:whnd , v:true) | hi Cursor blend=0 
+    au BufHidden <buffer> call nvim_win_close(s:whnd , v:true) | hi Cursor blend=0
   augroup END
+
 endfunction
+
 
 autocmd FileType defx call s:defx_my_settings()
 nnoremap <silent><leader>ef <cmd>call CreateCenteredDefxWindow(v:false)<CR>
