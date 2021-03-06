@@ -1,4 +1,4 @@
-let g:vsnip_snippet_dir ="~/.snippets"
+let g:vsnip_snippet_dir = $HOME."/.snippets"
 
 " Expand
 imap <expr> <C-j>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j>'
