@@ -66,6 +66,7 @@ require'compe'.setup {
         snippets_nvim = true,
         treesitter = true,
         tabnine = true,
+        ultisnips = true,
         zsh = true
     }
 }
