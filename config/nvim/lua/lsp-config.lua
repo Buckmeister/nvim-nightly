@@ -1,12 +1,16 @@
 local on_attach = function(client, bufnr)
-  local function buf_set_keymap(...)
-    vim.api.nvim_buf_set_keymap(bufnr, ...)
-  end
-  local function buf_set_option(...)
-    vim.api.nvim_buf_set_option(bufnr, ...)
-  end
 
-  buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
+    local capabilities = vim.lsp.protocol.make_client_capabilities()
+    capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+    local function buf_set_keymap(...)
+        vim.api.nvim_buf_set_keymap(bufnr, ...)
+    end
+    local function buf_set_option(...)
+        vim.api.nvim_buf_set_option(bufnr, ...)
+    end
+
+    buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
     -- Mappings.
     local opts = {noremap = true, silent = true}
@@ -51,9 +55,9 @@ local on_attach = function(client, bufnr)
     -- Set autocommands conditional on server_capabilities
     if client.resolved_capabilities.document_highlight then
         vim.api.nvim_exec([[
-      hi LspReferenceRead cterm=bold ctermbg=Gray guibg=Gray
-      hi LspReferenceText cterm=bold ctermbg=Gray guibg=Gray
-      hi LspReferenceWrite cterm=bold ctermbg=Gray guibg=Gray
+      hi LspReferenceRead cterm=bold ctermbg=Black guibg=Black
+      hi LspReferenceText cterm=bold ctermbg=Black guibg=Black
+      hi LspReferenceWrite cterm=bold ctermbg=Black guibg=Black
       augroup lsp_document_highlight
         autocmd! * <buffer>
         autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
@@ -63,37 +67,84 @@ local on_attach = function(client, bufnr)
     end
 end
 
-require'lspconfig'.angularls.setup {on_attach = on_attach}
-require'lspconfig'.bashls.setup {on_attach = on_attach}
-require'lspconfig'.cssls.setup {on_attach = on_attach}
-require'lspconfig'.denols.setup {on_attach = on_attach}
-require'lspconfig'.dockerls.setup {on_attach = on_attach}
-require'lspconfig'.hls.setup {on_attach = on_attach}
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-
+require'lspconfig'.angularls.setup {
+    on_attach = on_attach,
+    capabilities = capabilities
+}
+require'lspconfig'.bashls.setup {
+    on_attach = on_attach,
+    capabilities = capabilities
+}
+require'lspconfig'.cssls.setup {
+    on_attach = on_attach,
+    capabilities = capabilities
+}
+-- require'lspconfig'.denols.setup {
+--     on_attach = on_attach,
+--     capabilities = capabilities
+-- }
+require'lspconfig'.dockerls.setup {
+    on_attach = on_attach,
+    capabilities = capabilities
+}
+require'lspconfig'.hls.setup {
+    on_attach = on_attach,
+    capabilities = capabilities
+}
 require'lspconfig'.html.setup {capabilities = capabilities}
 local pid = vim.fn.getpid()
 local omnisharp_bin = "/usr/local/share/omnisharp/run"
 require'lspconfig'.omnisharp.setup {
     cmd = {omnisharp_bin, "--languageserver", "--hostPID", tostring(pid)},
-    on_attach = on_attach
+    on_attach = on_attach,
+    capabilities = capabilities
 }
-require'lspconfig'.jedi_language_server.setup {on_attach = on_attach}
-require'lspconfig'.jsonls.setup {on_attach = on_attach}
+require'lspconfig'.jedi_language_server.setup {
+    on_attach = on_attach,
+    capabilities = capabilities
+}
+require'lspconfig'.jsonls.setup {
+    on_attach = on_attach,
+    capabilities = capabilities
+}
 require'lspconfig'.jdtls.setup {
     cmd = {
         'jdt.ls', '/usr/local/share/jdt.ls/workspaces/' ..
             vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
     },
     root_dir = require'lspconfig'.util.root_pattern(".git", "pom.xml", "mvnw"),
-    on_attach = on_attach
+    on_attach = on_attach,
+    capabilities = capabilities
 }
-require'lspconfig'.perlls.setup {on_attach = on_attach}
-require'lspconfig'.r_language_server.setup {on_attach = on_attach}
-require'lspconfig'.rust_analyzer.setup {on_attach = on_attach}
-require'lspconfig'.texlab.setup {on_attach = on_attach}
-require'lspconfig'.tsserver.setup {on_attach = on_attach}
-require'lspconfig'.vimls.setup {on_attach = on_attach}
-require'lspconfig'.vuels.setup {on_attach = on_attach}
-require'lspconfig'.yamlls.setup {on_attach = on_attach}
+require'lspconfig'.perlls.setup {
+    on_attach = on_attach,
+    capabilities = capabilities
+}
+require'lspconfig'.r_language_server.setup {
+    on_attach = on_attach,
+    capabilities = capabilities
+}
+require'lspconfig'.rust_analyzer.setup {
+    on_attach = on_attach,
+    capabilities = capabilities
+}
+require'lspconfig'.texlab.setup {
+    on_attach = on_attach,
+    capabilities = capabilities
+}
+require'lspconfig'.tsserver.setup {
+    on_attach = on_attach,
+    capabilities = capabilities
+}
+require'lspconfig'.vimls.setup {
+    on_attach = on_attach,
+    capabilities = capabilities
+}
+require'lspconfig'.vuels.setup {
+    on_attach = on_attach,
+    capabilities = capabilities
+}
+require'lspconfig'.yamlls.setup {
+    on_attach = on_attach,
+    capabilities = capabilities
+}

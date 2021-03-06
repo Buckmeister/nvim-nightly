@@ -27,7 +27,7 @@ set scrolloff=8
 set sidescrolloff=5
 set mouse=a
 set history=1000
-set completeopt=menuone,noinsert,noselect
+set completeopt=menuone,noselect
 set wildignore+=*\\tmp\\*,*.swp,*.swo,*.zip,.git,.cabal-sandbox
 set wildmode=longest,list,full
 set wildmenu
@@ -39,7 +39,7 @@ set showcmd
 set list
 set listchars=tab:>·,trail:·
 set title
-set titlestring=vim\ %-15.20F\ %a%r%m
+set titlestring=nvim\ %-15.20F\ %a%r%m
 set titlelen=70
 set hidden
 set updatetime=300

@@ -19,11 +19,15 @@ source $VIMUSERRUNTIME/mappings.vim
 " == plug ==
 source $VIMUSERRUNTIME/plug.vim
 
-" == completion-tabnine ==
-source $VIMUSERRUNTIME/tabnine.vim
-
 " == gruvbox ==
 source $VIMUSERRUNTIME/gruvbox.vim
+
+" == vim-vsnip ==
+source $VIMUSERRUNTIME/vsnip.vim
+
+" == nvim-compe ==
+lua require("nvim-compe")
+source $VIMUSERRUNTIME/nvim-compe.vim
 
 " == goyo ==
 source $VIMUSERRUNTIME/goyo.vim
@@ -49,11 +53,14 @@ source $VIMUSERRUNTIME/telescope.vim
 " == coloresque ==
 source $VIMUSERRUNTIME/coloresque.vim
 
+" == manfile settings ==
+source $VIMUSERRUNTIME/man-settings.vim
+
 " == vim-choosewin ==
 source $VIMUSERRUNTIME/choosewin.vim
 
-" == UtilSnips ==
-source $VIMUSERRUNTIME/utilsnips.vim
+" == UltiSnips ==
+source $VIMUSERRUNTIME/ultisnips.vim
 
 " == defx ==
 source $VIMUSERRUNTIME/defx.vim
@@ -66,9 +73,6 @@ source $VIMUSERRUNTIME/java-syntax.vim
 
 " == vim-airline ==
 source $VIMUSERRUNTIME/airline.vim
-
-" == completion-nvim ==
-source $VIMUSERRUNTIME/completion.vim
 
 " == lsp-config ==
 lua require("lsp-config")

@@ -1,7 +1,9 @@
 call plug#begin(stdpath('data') . '/plugged')
 
-Plug 'aca/completion-tabnine', { 'do': './install.sh' }
 Plug 'gruvbox-community/gruvbox'
+Plug 'hrsh7th/nvim-compe'
+Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'honza/vim-snippets'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/goyo.vim'
@@ -12,7 +14,6 @@ Plug 'mattn/emmet-vim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'norcalli/snippets.nvim'
-Plug 'nvim-lua/completion-nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-telescope/telescope.nvim'
@@ -31,5 +32,12 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'uiiaoo/java-syntax.vim'
 Plug 'vim-airline/vim-airline'
+
+Plug 'microsoft/vscode'
+Plug g:plugs['vscode'].dir.'extensions/javascript'
+Plug g:plugs['vscode'].dir.'extensions/typescript-basics'
+Plug g:plugs['vscode'].dir.'extensions/cpp'
+Plug g:plugs['vscode'].dir.'extensions/markdown-basics'
+Plug g:plugs['vscode'].dir.'extensions/swift'
 
 call plug#end()
