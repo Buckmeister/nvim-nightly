@@ -56,6 +56,9 @@ source $VIMUSERRUNTIME/telescope.vim
 " == coloresque ==
 source $VIMUSERRUNTIME/coloresque.vim
 
+" == lspkind-nvim ==
+lua require('lspkind-nvim')
+
 " == manfile settings ==
 source $VIMUSERRUNTIME/man-settings.vim
 
