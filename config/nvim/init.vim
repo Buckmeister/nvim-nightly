@@ -7,6 +7,9 @@ source $VIMUSERRUNTIME/setup.vim
 " == basic stuff ==
 source $VIMUSERRUNTIME/general.vim
 
+" == spell ==
+source $VIMUSERRUNTIME/spell.vim
+
 " == gui ==
 source $VIMUSERRUNTIME/gui.vim
 
