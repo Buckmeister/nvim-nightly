@@ -129,6 +129,5 @@ function! CreateCenteredDefxWindow(bg)
 
 endfunction
 
-
 autocmd FileType defx call s:defx_my_settings()
 nnoremap <silent><leader>ef <cmd>call CreateCenteredDefxWindow(v:false)<CR>
