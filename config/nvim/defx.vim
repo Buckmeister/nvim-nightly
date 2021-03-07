@@ -108,7 +108,7 @@ function! CreateCenteredDefxWindow(bg)
         \ 'wincol': opts.col,
         \ 'winrow': opts.row,
         \ 'split': 'floating',
-        \ 'columns': 'icons:indent:filename',
+        \ 'columns': 'git:icons:indent:filename',
         \ 'buffer_name': 'defx',
         \ 'show_ignored_files': 0,
         \ 'toggle': 0,
@@ -130,4 +130,4 @@ function! CreateCenteredDefxWindow(bg)
 endfunction
 
 autocmd FileType defx call s:defx_my_settings()
-nnoremap <silent><leader>ef <cmd>call CreateCenteredDefxWindow(v:false)<CR>
+nnoremap <silent><leader>ef <cmd>call CreateCenteredDefxWindow(v:true)<CR>
