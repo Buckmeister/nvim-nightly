@@ -66,6 +66,7 @@ require'compe'.setup {
         tags = true,
         treesitter = true,
         ultisnips = true,
+        vim_dadbod_completion = true,
         vsnip = true,
         zsh = true
     }
