@@ -9,7 +9,10 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/vim-easy-align'
+Plug 'kristijanhusak/defx-git'
 Plug 'kristijanhusak/defx-icons'
+Plug 'kristijanhusak/vim-dadbod-completion'
+Plug 'kristijanhusak/vim-dadbod-ui'
 Plug 'mattn/emmet-vim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'neovimhaskell/haskell-vim'
@@ -29,10 +32,11 @@ Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'tamago324/compe-zsh'
 Plug 't9md/vim-choosewin'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-dadbod'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'tzachar/compe-tabnine', { 'do': './install.sh' }
+" Plug 'tzachar/compe-tabnine', { 'do': './install.sh' }
 Plug 'uiiaoo/java-syntax.vim'
 Plug 'vim-airline/vim-airline'
 
