@@ -75,23 +75,23 @@ require'lspconfig'.bashls.setup {
     on_attach = on_attach,
     capabilities = capabilities
 }
-
 require'lspconfig'.ccls.setup {
     on_attach = on_attach,
     capabilities = capabilities
 }
-
 require'lspconfig'.cssls.setup {
     on_attach = on_attach,
     capabilities = capabilities
 }
-
 -- require'lspconfig'.denols.setup {
 --     on_attach = on_attach,
 --     capabilities = capabilities
 -- }
-
 require'lspconfig'.dockerls.setup {
+    on_attach = on_attach,
+    capabilities = capabilities
+}
+require'lspconfig'.flow.setup {
     on_attach = on_attach,
     capabilities = capabilities
 }
