@@ -39,6 +39,7 @@ Plug 'tpope/vim-surround'
 " Plug 'tzachar/compe-tabnine', { 'do': './install.sh' }
 Plug 'uiiaoo/java-syntax.vim'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 Plug 'microsoft/vscode'
 Plug g:plugs['vscode'].dir.'extensions/java'
