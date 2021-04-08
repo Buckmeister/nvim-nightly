@@ -1,6 +1,13 @@
 let $VIMUSERRUNTIME = fnamemodify($MYVIMRC, ':p:h')
 
 try
+
+if !has('nvim-0.5')
+  echom "Incompatible Version:"
+  echom " -> Please use neovim 0.5"
+  call input("Press any key to continue") | quit
+endif
+
 " == setup ==
 source $VIMUSERRUNTIME/nvn-setup.vim
 

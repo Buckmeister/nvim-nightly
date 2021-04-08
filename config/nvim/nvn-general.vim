@@ -42,7 +42,7 @@ set titlelen=70
 set hidden
 set updatetime=300
 set shortmess+=c
-set signcolumn=number
+set signcolumn=yes
 
 let colorterm=$COLORTERM
 if colorterm=="truecolor" || colorterm=="24bit"
