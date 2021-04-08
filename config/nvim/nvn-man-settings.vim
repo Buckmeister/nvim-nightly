@@ -1,5 +1,9 @@
 function! CloseWin()
-  silent try | close | catch | bd | endtry
+  if len(getbufinfo({'buflisted':1})) == 1
+    quit
+  else
+    bd
+  endif
 endfunction
 
 function! s:man_settings() abort
@@ -12,19 +16,25 @@ function! s:man_settings() abort
   setlocal nomodifiable
   setlocal noswapfile
   setlocal noexpandtab
-
+  setlocal textwidth=160
   setlocal tabstop=8
   setlocal softtabstop=8
   setlocal shiftwidth=8
   setlocal signcolumn=no
+  setlocal number
   setlocal nolist
-  if exists('+colorcolumn')
+  if has('colorcolumn')
     setlocal colorcolumn=0
   endif
 
   map <buffer> q <cmd>call CloseWin()<CR>
 
   highlight OverLength ctermbg=none guibg=none
+
+  augroup mansettings
+    autocmd!
+    autocmd BufEnter man match OverLength /\%160v.*/
+  augroup END
 endfunction
 
 autocmd FileType man call s:man_settings()

@@ -2,89 +2,76 @@ let $VIMUSERRUNTIME = fnamemodify($MYVIMRC, ':p:h')
 
 try
 " == setup ==
-source $VIMUSERRUNTIME/setup.vim
+source $VIMUSERRUNTIME/nvn-setup.vim
 
 " == basic stuff ==
-source $VIMUSERRUNTIME/general.vim
+source $VIMUSERRUNTIME/nvn-general.vim
 
 " == spell ==
-source $VIMUSERRUNTIME/spell.vim
-
-" == gui ==
-source $VIMUSERRUNTIME/gui.vim
+source $VIMUSERRUNTIME/nvn-spell.vim
 
 " == overlength ==
-source $VIMUSERRUNTIME/overlength.vim
+source $VIMUSERRUNTIME/nvn-overlength.vim
 
 " == personal mappings ==
-source $VIMUSERRUNTIME/mappings.vim
+source $VIMUSERRUNTIME/nvn-mappings.vim
 
 " == plug ==
-source $VIMUSERRUNTIME/plug.vim
-
-" == gruvbox ==
-source $VIMUSERRUNTIME/gruvbox.vim
+source $VIMUSERRUNTIME/nvn-plug.vim
 
 " == vim-vsnip ==
-source $VIMUSERRUNTIME/vsnip.vim
+source $VIMUSERRUNTIME/nvn-vsnip.vim
 
 " == nvim-compe ==
-lua require("nvim-compe")
-source $VIMUSERRUNTIME/nvim-compe.vim
+source $VIMUSERRUNTIME/nvn-compe.vim
 
 " == goyo ==
-source $VIMUSERRUNTIME/goyo.vim
+source $VIMUSERRUNTIME/nvn-goyo.vim
 
 " == limelight ==
-source $VIMUSERRUNTIME/limelight.vim
+source $VIMUSERRUNTIME/nvn-limelight.vim
 
 " == vim-easy-align ==
-source $VIMUSERRUNTIME/easy-align.vim
+source $VIMUSERRUNTIME/nvn-easy-align.vim
 
 " == emmet ==
-source $VIMUSERRUNTIME/emmet.vim
+source $VIMUSERRUNTIME/nvn-emmet.vim
 
 " == haskell-vim ==
-source $VIMUSERRUNTIME/haskell.vim
-
-" == snippets.nvim ==
-lua require('snippets-nvim')
+source $VIMUSERRUNTIME/nvn-haskell.vim
 
 " == telescope.nvim ==
-source $VIMUSERRUNTIME/telescope.vim
-
-" == coloresque ==
-source $VIMUSERRUNTIME/coloresque.vim
-
-" == lspkind-nvim ==
-lua require('lspkind-nvim')
+source $VIMUSERRUNTIME/nvn-telescope.vim
 
 " == manfile settings ==
-source $VIMUSERRUNTIME/man-settings.vim
+source $VIMUSERRUNTIME/nvn-man-settings.vim
 
 " == vim-choosewin ==
-source $VIMUSERRUNTIME/choosewin.vim
+source $VIMUSERRUNTIME/nvn-choosewin.vim
 
 " == UltiSnips ==
-source $VIMUSERRUNTIME/ultisnips.vim
+source $VIMUSERRUNTIME/nvn-ultisnips.vim
+
+" == Rnvimr ==
+source $VIMUSERRUNTIME/nvn-rnvimr.vim
 
 " == defx ==
-source $VIMUSERRUNTIME/defx.vim
+source $VIMUSERRUNTIME/nvn-defx.vim
 
 " == neoformat ==
-source $VIMUSERRUNTIME/neoformat.vim
+source $VIMUSERRUNTIME/nvn-neoformat.vim
 
-" == java-syntax ==
-source $VIMUSERRUNTIME/java-syntax.vim
+" == colorscheme ==
+" source $VIMUSERRUNTIME/nvn-cs-edge.vim
+" source $VIMUSERRUNTIME/nvn-cs-everforest.vim
+source $VIMUSERRUNTIME/nvn-cs-gruvbox-material.vim
+" source $VIMUSERRUNTIME/nvn-cs-sonokai.vim
 
 " == vim-airline ==
-source $VIMUSERRUNTIME/airline.vim
+source $VIMUSERRUNTIME/nvn-airline.vim
 
-" == lsp-config ==
-lua require("lsp-config")
-
-" == nvim-lsputils ==
-lua require('nvim-lsputils')
+" == init.lua ==
+lua require('init')
 
 catch
   echo 'Caught "' . v:exception . '" in ' . v:throwpoint

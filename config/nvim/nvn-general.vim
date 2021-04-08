@@ -1,7 +1,6 @@
 syntax on
 filetype plugin indent on
 
-set nocompatible
 set hlsearch
 set incsearch
 set number
@@ -31,9 +30,8 @@ set completeopt=menuone,noselect
 set wildignore+=*\\tmp\\*,*.swp,*.swo,*.zip,.git,.cabal-sandbox
 set wildmode=longest,list,full
 set wildmenu
-set t_Co=256
 set splitbelow splitright
-set cmdheight=2
+set cmdheight=1
 set nobackup
 set showcmd
 set list
@@ -45,3 +43,12 @@ set hidden
 set updatetime=300
 set shortmess+=c
 set signcolumn=number
+
+let colorterm=$COLORTERM
+if colorterm=="truecolor" || colorterm=="24bit"
+  if has('termguicolors')
+    set termguicolors
+  endif
+endif
+
+set gfn=FiraCode\ Nerd\ Font:h14.00

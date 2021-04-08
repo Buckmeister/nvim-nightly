@@ -118,9 +118,16 @@ function! CreateCenteredDefxWindow(bg)
 
   setl norelativenumber
   setl nonumber
-  setl termguicolors
+  let colorterm=$COLORTERM
+  if colorterm=="truecolor" || colorterm=="24bit"
+    if has('termguicolors')
+      setl termguicolors
+    endif
+  endif
   hi Cursor blend=100
   setl guicursor+=a:Cursor/lCursor
+
+  hi li Defx_filename_directory Label
 
   augroup cls
     autocmd!
