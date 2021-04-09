@@ -1,4 +1,4 @@
-function! s:defx_my_settings() abort
+function! s:nvn_defx_settings() abort
   nnoremap <silent><buffer><expr> <CR>
   \ defx#is_directory() ?
   \ defx#do_action('open_directory') :
@@ -118,13 +118,15 @@ function! CreateCenteredDefxWindow(bg)
 
   setl norelativenumber
   setl nonumber
+
   let colorterm=$COLORTERM
   if colorterm=="truecolor" || colorterm=="24bit"
     if has('termguicolors')
       setl termguicolors
     endif
   endif
-  hi Cursor blend=100
+
+  hi Cursor blend=50
   setl guicursor+=a:Cursor/lCursor
 
   hi li Defx_filename_directory Label
@@ -136,5 +138,5 @@ function! CreateCenteredDefxWindow(bg)
 
 endfunction
 
-autocmd FileType defx call s:defx_my_settings()
+autocmd FileType defx call s:nvn_defx_settings()
 nnoremap <silent><leader>ef <cmd>call CreateCenteredDefxWindow(v:true)<CR>

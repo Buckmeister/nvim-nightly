@@ -7,17 +7,17 @@ let g:rnvimr_enable_ex = 1
 " Make Ranger to be hidden after picking a file
 let g:rnvimr_enable_picker = 1
 
-" Disable a border for floating window
+" Enable border for floating window
 let g:rnvimr_draw_border = 1
 
 " Hide the files included in gitignore
-" let g:rnvimr_hide_gitignore = 1
+let g:rnvimr_hide_gitignore = 1
 
 " Change the border's color
 " let g:rnvimr_border_attr = {'fg': 1, 'bg': 1}
 
 " Make Neovim wipe the buffers corresponding to the files deleted by Ranger
-" let g:rnvimr_enable_bw = 1
+let g:rnvimr_enable_bw = 1
 
 " Add a shadow window, value is equal to 100 will disable shadow
 let g:rnvimr_shadow_winblend = 100
@@ -29,7 +29,7 @@ tnoremap <silent> <leader>er <C-\><C-n>:RnvimrToggle<CR>
 tnoremap <silent> <leader>rr <C-\><C-n>:RnvimrResize<CR>
 
 " Resize floating window by special preset layouts
-tnoremap <silent> <leader>rr <C-\><C-n>:RnvimrResize 1,8,9,11,5<CR>
+" tnoremap <silent> <leader>rr <C-\><C-n>:RnvimrResize 1,8,9,11,5<CR>
 
 " Resize floating window by single preset layout
 tnoremap <silent> <leader>rc <C-\><C-n>:RnvimrResize 0<CR>
@@ -51,14 +51,14 @@ let g:rnvimr_ranger_views = [
             \ ]
 
 " Customize the initial layout
-let g:rnvimr_layout = {
-            \ 'relative': 'editor',
-            \ 'width': float2nr(round(0.8 * &columns)),
-            \ 'height': float2nr(round(0.8 * &lines)),
-            \ 'col': float2nr(round(0.125 * &columns)),
-            \ 'row': float2nr(round(0.125 * &lines)),
-            \ 'style': 'minimal'
-            \ }
+" let g:rnvimr_layout = {
+"             \ 'relative': 'editor',
+"             \ 'width': float2nr(round(0.8 * &columns)),
+"             \ 'height': float2nr(round(0.8 * &lines)),
+"             \ 'col': float2nr(round(0.125 * &columns)),
+"             \ 'row': float2nr(round(0.125 * &lines)),
+"             \ 'style': 'minimal'
+"             \ }
 
 " Customize multiple presetlayouts
 " '{}' represents the initial layout
@@ -77,14 +77,14 @@ let g:rnvimr_presets = [
             \ ]
 
 " Fullscreen for initial layout
-" let g:rnvimr_layout = {
-"            \ 'relative': 'editor',
-"            \ 'width': &columns,
-"            \ 'height': &lines - 2,
-"            \ 'col': 0,
-"            \ 'row': 0,
-"            \ 'style': 'minimal'
-"            \ }
+let g:rnvimr_layout = {
+           \ 'relative': 'editor',
+           \ 'width': &columns,
+           \ 'height': &lines - 2,
+           \ 'col': 0,
+           \ 'row': 0,
+           \ 'style': 'minimal'
+           \ }
 "
 " Only use initial preset layout
 " let g:rnvimr_presets = [{}]

@@ -1,7 +1,7 @@
 call plug#begin(stdpath('data') . '/plugged')
 
 Plug 'cohama/lexima.vim'
-Plug 'glepnir/lspsaga.nvim'
+" Plug 'glepnir/lspsaga.nvim'
 Plug 'hrsh7th/nvim-compe'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
@@ -46,16 +46,16 @@ Plug 'vim-airline/vim-airline-themes'
 
 Plug 'ryanoasis/vim-devicons'
 
-Plug 'microsoft/vscode'
-Plug g:plugs['vscode'].dir.'extensions/java'
-Plug g:plugs['vscode'].dir.'extensions/javascript'
-Plug g:plugs['vscode'].dir.'extensions/typescript-basics'
-Plug g:plugs['vscode'].dir.'extensions/cpp'
-Plug g:plugs['vscode'].dir.'extensions/csharp'
-Plug g:plugs['vscode'].dir.'extensions/markdown-basics'
-Plug g:plugs['vscode'].dir.'extensions/swift'
-Plug g:plugs['vscode'].dir.'extensions/bat'
-Plug g:plugs['vscode'].dir.'extensions/powershell'
+" Plug 'microsoft/vscode'
+" Plug g:plugs['vscode'].dir.'extensions/java'
+" Plug g:plugs['vscode'].dir.'extensions/javascript'
+" Plug g:plugs['vscode'].dir.'extensions/typescript-basics'
+" Plug g:plugs['vscode'].dir.'extensions/cpp'
+" Plug g:plugs['vscode'].dir.'extensions/csharp'
+" Plug g:plugs['vscode'].dir.'extensions/markdown-basics'
+" Plug g:plugs['vscode'].dir.'extensions/swift'
+" Plug g:plugs['vscode'].dir.'extensions/bat'
+" Plug g:plugs['vscode'].dir.'extensions/powershell'
 
 call plug#end()
 

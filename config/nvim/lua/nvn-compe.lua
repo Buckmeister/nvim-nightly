@@ -62,7 +62,7 @@ require'compe'.setup {
         path = true,
         snippets_nvim = true,
         spell = {filetypes = {'markdown', 'text', 'gitcommit'}},
-        tabnine = true,
+        tabnine = false,
         tags = true,
         treesitter = true,
         ultisnips = true,

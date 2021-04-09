@@ -24,6 +24,7 @@ set softtabstop=2
 set backspace=2
 set scrolloff=8
 set sidescrolloff=5
+set ttyfast
 set mouse=a
 set history=1000
 set completeopt=menuone,noselect
@@ -48,6 +49,10 @@ let colorterm=$COLORTERM
 if colorterm=="truecolor" || colorterm=="24bit"
   if has('termguicolors')
     set termguicolors
+  endif
+  if &term =~# '^screen'
+    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
   endif
 endif
 
