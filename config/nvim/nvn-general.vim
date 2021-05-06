@@ -9,7 +9,7 @@ set cursorline
 set cursorcolumn
 set showmode
 set showmatch
-set textwidth=80
+set textwidth=82
 set formatoptions-=t
 set nowrap
 set colorcolumn=+1

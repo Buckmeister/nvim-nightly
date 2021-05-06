@@ -19,5 +19,8 @@ require("nvn-lspconfig")
 -- lspkind-nvim --
 require('nvn-lspkind')
 
--- lspsaga.nvim --
--- require('nvn-lspsaga')
+-- lspsaga --
+require('nvn-lspsaga')
+
+-- rust-tools --
+require('rust-tools')

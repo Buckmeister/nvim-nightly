@@ -4,7 +4,7 @@ try
 
 if !has('nvim-0.5')
   echom "Incompatible Version:"
-  echom " -> Please use neovim 0.5"
+  echom " -> Please use neovim > 0.5"
   call input("Press any key to continue") | quit
 endif
 
@@ -30,7 +30,7 @@ source $VIMUSERRUNTIME/nvn-plug.vim
 source $VIMUSERRUNTIME/nvn-vsnip.vim
 
 " == lspsaga ==
-" source $VIMUSERRUNTIME/nvn-lspsaga.vim
+source $VIMUSERRUNTIME/nvn-lspsaga.vim
 
 " == nvim-compe ==
 source $VIMUSERRUNTIME/nvn-compe.vim
@@ -71,14 +71,27 @@ source $VIMUSERRUNTIME/nvn-defx.vim
 " == neoformat ==
 source $VIMUSERRUNTIME/nvn-neoformat.vim
 
-" == colorscheme ==
-" source $VIMUSERRUNTIME/nvn-cs-edge.vim
-" source $VIMUSERRUNTIME/nvn-cs-everforest.vim
-source $VIMUSERRUNTIME/nvn-cs-gruvbox-material.vim
-" source $VIMUSERRUNTIME/nvn-cs-sonokai.vim
+" == neoformat ==
+source $VIMUSERRUNTIME/nvn-floaterm.vim
 
 " == vim-airline ==
 source $VIMUSERRUNTIME/nvn-airline.vim
+
+" == colorscheme ==
+source $VIMUSERRUNTIME/nvn-cs-gruvbox-material.vim
+"
+" == the following colorschemes are preinstalled ==
+" == and can be activated by uncommenting one of ==
+" == the following configuration files below ... ==
+"
+" source $VIMUSERRUNTIME/nvn-cs-edge.vim
+" source $VIMUSERRUNTIME/nvn-cs-everforest.vim
+" source $VIMUSERRUNTIME/nvn-cs-gruvbox-material.vim
+" source $VIMUSERRUNTIME/nvn-cs-sonokai.vim
+"
+
+" == custom highlights ==
+source $VIMUSERRUNTIME/nvn-custom-highlights.vim
 
 " == init.lua ==
 lua require('init')

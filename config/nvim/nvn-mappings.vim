@@ -6,6 +6,8 @@ map <Down>  :tabp<CR>
 map <Left>  :bp<CR>
 map <Right> :bn<CR>
 
+map <Leader>w :update<CR>
+map <Leader>q :bd<CR>
 map <Leader># :let @/ = ""<CR>
 map <Leader>ba :.!figlet<CR>
 
@@ -20,6 +22,15 @@ nnoremap Ü <C-O>
 
 nnoremap <leader>lcd :lcd %:h<CR>
 nnoremap <leader>tcd :tcd %:h<CR>
+
+vnoremap <leader>p "_dP
+
+nnoremap <leader>y "+y
+vnoremap <leader>y "+y
+nnoremap <leader>Y gg"+yG
+
+nnoremap <leader>d "_d
+vnoremap <leader>d "_d
 
 " Open files located in the same dir in with the current file is edited
 nnoremap <leader>ew :e <C-R>=expand("%:.:h") . "/"<CR>
