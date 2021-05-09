@@ -68,17 +68,20 @@ source $VIMUSERRUNTIME/nvn-rnvimr.vim
 " == defx ==
 source $VIMUSERRUNTIME/nvn-defx.vim
 
+" == which-key ==
+source $VIMUSERRUNTIME/nvn-which-key.vim
+
 " == neoformat ==
 source $VIMUSERRUNTIME/nvn-neoformat.vim
 
-" == neoformat ==
+" == floaterm ==
 source $VIMUSERRUNTIME/nvn-floaterm.vim
 
 " == vim-airline ==
 source $VIMUSERRUNTIME/nvn-airline.vim
 
 " == colorscheme ==
-source $VIMUSERRUNTIME/nvn-cs-gruvbox-material.vim
+source $VIMUSERRUNTIME/nvn-cs-sonokai.vim
 "
 " == the following colorschemes are preinstalled ==
 " == and can be activated by uncommenting one of ==

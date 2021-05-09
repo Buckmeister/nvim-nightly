@@ -1,5 +1,6 @@
 call plug#begin(stdpath('data') . '/plugged')
 
+Plug 'andymass/vim-matchup'
 Plug 'cohama/lexima.vim'
 Plug 'glepnir/lspsaga.nvim'
 Plug 'hrsh7th/nvim-compe'
@@ -16,6 +17,7 @@ Plug 'kristijanhusak/defx-git'
 Plug 'kristijanhusak/defx-icons'
 Plug 'kristijanhusak/vim-dadbod-completion'
 Plug 'kristijanhusak/vim-dadbod-ui'
+Plug 'liuchengxu/vim-which-key'
 Plug 'mattn/emmet-vim'
 Plug 'mhinz/vim-signify'
 Plug 'neovim/nvim-lspconfig'
