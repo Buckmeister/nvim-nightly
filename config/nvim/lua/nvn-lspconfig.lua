@@ -105,10 +105,6 @@ require'lspconfig'.omnisharp.setup {
     on_attach = on_attach,
     capabilities = capabilities
 }
-require'lspconfig'.jedi_language_server.setup {
-    on_attach = on_attach,
-    capabilities = capabilities
-}
 require'lspconfig'.jsonls.setup {
     on_attach = on_attach,
     capabilities = capabilities
@@ -123,6 +119,10 @@ require'lspconfig'.jdtls.setup {
     capabilities = capabilities
 }
 require'lspconfig'.perlls.setup {
+    on_attach = on_attach,
+    capabilities = capabilities
+}
+require'lspconfig'.pyright.setup {
     on_attach = on_attach,
     capabilities = capabilities
 }
