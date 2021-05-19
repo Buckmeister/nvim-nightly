@@ -29,9 +29,6 @@ source $VIMUSERRUNTIME/nvn-plug.vim
 " == vim-vsnip ==
 source $VIMUSERRUNTIME/nvn-vsnip.vim
 
-" == lspsaga ==
-source $VIMUSERRUNTIME/nvn-lspsaga.vim
-
 " == nvim-compe ==
 source $VIMUSERRUNTIME/nvn-compe.vim
 
