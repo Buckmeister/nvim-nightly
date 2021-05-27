@@ -20,4 +20,4 @@ require("nvn-lspconfig")
 require('nvn-lspkind')
 
 -- rust-tools --
-require('rust-tools')
+require('nvn-rust-tools')
