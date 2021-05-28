@@ -21,3 +21,6 @@ require('nvn-lspkind')
 
 -- rust-tools --
 require('nvn-rust-tools')
+
+-- nvim-web-devicons --
+require('nvn-web-devicons')
