@@ -78,7 +78,7 @@ source $VIMUSERRUNTIME/nvn-floaterm.vim
 source $VIMUSERRUNTIME/nvn-airline.vim
 
 " == colorscheme ==
-source $VIMUSERRUNTIME/nvn-cs-sonokai.vim
+source $VIMUSERRUNTIME/nvn-cs-gruvbox-material.vim
 "
 " == the following colorschemes are preinstalled ==
 " == and can be activated by uncommenting one of ==
